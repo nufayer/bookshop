@@ -1,11 +1,13 @@
 'use client';
 
-import { useState } from 'react';
+export const dynamic = 'force-dynamic'; // ← prevents static generation
+
+import { useState, Suspense } from 'react';
 import Link from 'next/link';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { signIn } from '@/lib/auth-client';
 
-const LoginPage = () => {
+const LoginForm = () => {
     const router = useRouter();
     const searchParams = useSearchParams();
     const redirectTo = searchParams.get('redirect') || '/';
@@ -55,6 +57,44 @@ const LoginPage = () => {
     };
 
     return (
+        <div className='glass-panel mx-auto w-full max-w-xl rounded-[2rem] p-6 md:p-8'>
+            <div className='mb-8 space-y-3 text-center'>
+                <h2 className='text-4xl font-black'>Login</h2>
+                <p className='text-base-content/70'>Use your account to enter the library.</p>
+            </div>
+
+            <form onSubmit={handleSubmit} className='space-y-5'>
+                {error ? (
+                    <div className='alert alert-error rounded-2xl'>
+                        <span>{error}</span>
+                    </div>
+                ) : null}
+
+                <fieldset className='space-y-2'>
+                    <label className='text-sm font-semibold'>Email</label>
+                    <input type='email' name='email' required className='input input-bordered w-full rounded-2xl' placeholder='Enter your email' />
+                </fieldset>
+
+                <fieldset className='space-y-2'>
+                    <label className='text-sm font-semibold'>Password</label>
+                    <input type='password' name='password' required className='input input-bordered w-full rounded-2xl' placeholder='Enter your password' />
+                </fieldset>
+
+                <button type='submit' disabled={isLoading} className='btn btn-primary btn-lg w-full rounded-full'>
+                    {isLoading ? 'Logging in...' : 'Login'}
+                </button>
+            </form>
+
+            <div className="divider">OR</div>
+            <button onClick={handleGoogleLogin} className="btn btn-outline w-full rounded-full">
+                Login with Google
+            </button>
+        </div>
+    );
+};
+
+const LoginPage = () => {
+    return (
         <section className='grid min-h-screen bg-base-200/60 px-4 py-10'>
             <div className='page-shell grid items-center gap-8 lg:grid-cols-[0.95fr_1.05fr]'>
                 <div className='hidden rounded-[2rem] bg-gradient-to-br from-primary via-primary/90 to-secondary p-10 text-primary-content lg:block'>
@@ -66,58 +106,9 @@ const LoginPage = () => {
                     </p>
                 </div>
 
-                <div className='glass-panel mx-auto w-full max-w-xl rounded-[2rem] p-6 md:p-8'>
-                    <div className='mb-8 space-y-3 text-center'>
-                        <h2 className='text-4xl font-black'>Login</h2>
-                        <p className='text-base-content/70'>Use your account to enter the library.</p>
-                    </div>
-
-                    <form onSubmit={handleSubmit} className='space-y-5'>
-                        {error ? (
-                            <div className='alert alert-error rounded-2xl'>
-                                <span>{error}</span>
-                            </div>
-                        ) : null}
-
-                        <fieldset className='space-y-2'>
-                            <label className='text-sm font-semibold'>Email</label>
-                            <input type='email' name='email' required className='input input-bordered w-full rounded-2xl' placeholder='Enter your email' />
-                        </fieldset>
-
-                        <fieldset className='space-y-2'>
-                            <label className='text-sm font-semibold'>Password</label>
-                            <input type='password' name='password' required className='input input-bordered w-full rounded-2xl' placeholder='Enter your password' />
-                        </fieldset>
-
-                        <button type='submit' disabled={isLoading} className='btn btn-primary btn-lg w-full rounded-full'>
-                            {isLoading ? 'Logging in...' : 'Login'}
-                        </button>
-                    </form>
-
-                    <div className='divider my-7'>or</div>
-
-                    <button
-                        onClick={handleGoogleLogin}
-                        type='button'
-                        disabled={!isGoogleAuthEnabled}
-                        className='btn btn-outline btn-lg w-full rounded-full'
-                    >
-                        Continue with Google
-                    </button>
-
-                    {!isGoogleAuthEnabled ? (
-                        <p className='mt-3 text-center text-sm text-base-content/60'>
-                            Google OAuth is currently disabled for this app.
-                        </p>
-                    ) : null}
-
-                    <p className='mt-6 text-center text-sm text-base-content/70'>
-                        New here?{' '}
-                        <Link href='/register' className='font-bold text-primary'>
-                            Register
-                        </Link>
-                    </p>
-                </div>
+                <Suspense fallback={<div className="flex justify-center p-10"><span className="loading loading-spinner loading-lg"></span></div>}>
+                    <LoginForm />
+                </Suspense>
             </div>
         </section>
     );
