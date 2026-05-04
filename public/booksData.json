@@ -1,0 +1,110 @@
+[
+  {
+    "id": 1,
+    "title": "The Silent Forest",
+    "author": "Ava Rahman",
+    "description": "A mysterious tale of a village surrounded by a forest where no sound ever escapes.",
+    "category": "Story",
+    "available_quantity": 8,
+    "image_url": "https://example.com/images/silent-forest.jpg"
+  },
+  {
+    "id": 2,
+    "title": "JavaScript Mastery",
+    "author": "Nabil Hossain",
+    "description": "A complete guide to modern JavaScript, covering ES6+, async programming, and frameworks.",
+    "category": "Tech",
+    "available_quantity": 12,
+    "image_url": "https://example.com/images/js-mastery.jpg"
+  },
+  {
+    "id": 3,
+    "title": "Quantum Wonders",
+    "author": "Dr. Sara Karim",
+    "description": "An introduction to the strange and fascinating world of quantum physics.",
+    "category": "Science",
+    "available_quantity": 5,
+    "image_url": "https://example.com/images/quantum-wonders.jpg"
+  },
+  {
+    "id": 4,
+    "title": "The Last Train Home",
+    "author": "Imran Chowdhury",
+    "description": "A heartfelt story of a man rediscovering his roots during a long train journey.",
+    "category": "Story",
+    "available_quantity": 10,
+    "image_url": "https://example.com/images/last-train.jpg"
+  },
+  {
+    "id": 5,
+    "title": "Python for Beginners",
+    "author": "Farhan Ahmed",
+    "description": "A beginner-friendly guide to programming with Python and building real-world projects.",
+    "category": "Tech",
+    "available_quantity": 15,
+    "image_url": "https://example.com/images/python-beginners.jpg"
+  },
+  {
+    "id": 6,
+    "title": "The Human Brain Explained",
+    "author": "Dr. Nusrat Jahan",
+    "description": "Explore how the human brain works, from neurons to consciousness.",
+    "category": "Science",
+    "available_quantity": 7,
+    "image_url": "https://example.com/images/brain-explained.jpg"
+  },
+  {
+    "id": 7,
+    "title": "Echoes of the Past",
+    "author": "Tanvir Islam",
+    "description": "A gripping story about uncovering secrets buried deep within a family’s history.",
+    "category": "Story",
+    "available_quantity": 6,
+    "image_url": "https://example.com/images/echoes-past.jpg"
+  },
+  {
+    "id": 8,
+    "title": "React in Action",
+    "author": "Sadia Noor",
+    "description": "Learn how to build modern web applications using React and best practices.",
+    "category": "Tech",
+    "available_quantity": 9,
+    "image_url": "https://example.com/images/react-action.jpg"
+  },
+  {
+    "id": 9,
+    "title": "Space Exploration 101",
+    "author": "Dr. Arif Mahmud",
+    "description": "A journey through the history and future of space exploration.",
+    "category": "Science",
+    "available_quantity": 4,
+    "image_url": "https://example.com/images/space-101.jpg"
+  },
+  {
+    "id": 10,
+    "title": "Whispers in the Wind",
+    "author": "Lamia Sultana",
+    "description": "A poetic story about love, loss, and finding hope in unexpected places.",
+    "category": "Story",
+    "available_quantity": 11,
+    "image_url": "https://example.com/images/whispers-wind.jpg"
+  },
+  {
+    "id": 11,
+    "title": "Cybersecurity Basics",
+    "author": "Rakib Hasan",
+    "description": "An essential guide to protecting systems, networks, and data from cyber threats.",
+    "category": "Tech",
+    "available_quantity": 13,
+    "image_url": "https://example.com/images/cybersecurity-basics.jpg"
+  },
+  {
+    "id": 12,
+    "title": "Climate Change and Us",
+    "author": "Dr. Meherun Nesa",
+    "description": "An insightful look into climate change and its global impact on humanity.",
+    "category": "Science",
+    "available_quantity": 6,
+    "image_url": "https://example.com/images/climate-change.jpg"
+  }
+]
