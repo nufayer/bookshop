@@ -4,24 +4,24 @@
 @plugin "daisyui/theme" {
   name: "sakura-bookhub";
   default: true;
-  prefersdark: false;
-  color-scheme: light;
-  --color-base-100: #fffaf5;
-  --color-base-200: #f7efe6;
-  --color-base-300: #ebdccd;
-  --color-base-content: #2f241f;
-  --color-primary: #a44949;
-  --color-primary-content: #fff8f3;
-  --color-secondary: #355c5b;
-  --color-secondary-content: #f8fffc;
-  --color-accent: #d7a55a;
-  --color-accent-content: #2f241f;
-  --color-neutral: #2f241f;
-  --color-neutral-content: #f9f4ef;
-  --color-info: #6a91c9;
-  --color-success: #4d8b66;
-  --color-warning: #d18b39;
-  --color-error: #c45454;
+  prefersdark: true;
+  color-scheme: dark;
+  --color-base-100: #161119;
+  --color-base-200: #1f1722;
+  --color-base-300: #2b2130;
+  --color-base-content: #f7ede6;
+  --color-primary: #f08c7d;
+  --color-primary-content: #211315;
+  --color-secondary: #6fb8b2;
+  --color-secondary-content: #0d1918;
+  --color-accent: #f0bf76;
+  --color-accent-content: #24180b;
+  --color-neutral: #120d14;
+  --color-neutral-content: #f8f2ec;
+  --color-info: #89aee6;
+  --color-success: #79c596;
+  --color-warning: #f0b365;
+  --color-error: #ef7b7b;
   --radius-selector: 1rem;
   --radius-field: 0.9rem;
   --radius-box: 1.4rem;
@@ -32,13 +32,13 @@
 
 html {
   background:
-    radial-gradient(circle at top, rgba(164, 73, 73, 0.12), transparent 30%),
-    radial-gradient(circle at bottom right, rgba(53, 92, 91, 0.12), transparent 25%),
-    #fffaf5;
+    radial-gradient(circle at top, rgba(240, 140, 125, 0.18), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(111, 184, 178, 0.15), transparent 25%),
+    #161119;
 }
 
 body {
-  color: #2f241f;
+  color: #f7ede6;
   background: transparent;
 }
 
@@ -61,10 +61,10 @@ button:hover {
 }
 
 .glass-panel {
-  background: rgba(255, 250, 245, 0.84);
+  background: rgba(27, 21, 31, 0.82);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(164, 73, 73, 0.12);
-  box-shadow: 0 18px 45px rgba(71, 44, 31, 0.08);
+  border: 1px solid rgba(240, 140, 125, 0.14);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.28);
 }
 
 .book-grid {
