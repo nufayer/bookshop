@@ -1,3 +1,74 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
+@plugin "daisyui/theme" {
+  name: "sakura-bookhub";
+  default: true;
+  prefersdark: false;
+  color-scheme: light;
+  --color-base-100: #fffaf5;
+  --color-base-200: #f7efe6;
+  --color-base-300: #ebdccd;
+  --color-base-content: #2f241f;
+  --color-primary: #a44949;
+  --color-primary-content: #fff8f3;
+  --color-secondary: #355c5b;
+  --color-secondary-content: #f8fffc;
+  --color-accent: #d7a55a;
+  --color-accent-content: #2f241f;
+  --color-neutral: #2f241f;
+  --color-neutral-content: #f9f4ef;
+  --color-info: #6a91c9;
+  --color-success: #4d8b66;
+  --color-warning: #d18b39;
+  --color-error: #c45454;
+  --radius-selector: 1rem;
+  --radius-field: 0.9rem;
+  --radius-box: 1.4rem;
+  --border: 1px;
+  --depth: 1;
+  --noise: 0;
+}
+
+html {
+  background:
+    radial-gradient(circle at top, rgba(164, 73, 73, 0.12), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(53, 92, 91, 0.12), transparent 25%),
+    #fffaf5;
+}
+
+body {
+  color: #2f241f;
+  background: transparent;
+}
+
+a,
+button {
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    opacity 180ms ease;
+}
+
+a:hover,
+button:hover {
+  transform: translateY(-1px);
+}
+
+.page-shell {
+  width: min(1200px, calc(100% - 2rem));
+  margin-inline: auto;
+}
+
+.glass-panel {
+  background: rgba(255, 250, 245, 0.84);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(164, 73, 73, 0.12);
+  box-shadow: 0 18px 45px rgba(71, 44, 31, 0.08);
+}
+
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}

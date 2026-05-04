@@ -1,8 +1,14 @@
 import Banner from "@/components/Banner";
-import Image from "next/image";
+import FeaturedBooks from "@/components/FeaturedBooks";
+import { getFeaturedBooks } from "@/lib/books";
 
-export default function Home() {
+export default async function Home() {
+  const featuredBooks = await getFeaturedBooks(4);
+
   return (
-    <Banner />
+    <>
+      <Banner />
+      <FeaturedBooks books={featuredBooks} />
+    </>
   );
 }
